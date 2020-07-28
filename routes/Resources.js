@@ -18,7 +18,12 @@ router.get("/", async (req, res) => {
 router.get('/:id', (req, res) => {
   ResourcesModel.findOne({ _id: req.params.id })
     .then(resource => {
-      res.status(200).json(resource);
+      // if (resource._id != req.params.id) {
+      //   res.json({message: 'Resource not found'})
+      // }else{
+      //   res.status(200).json(resource);
+      // }
+      res.json(resource)
     })
     .catch(() =>{
       res.json({ message:"Resource not found"})
@@ -60,7 +65,8 @@ router.put('/:id', (req, res) => {
     },
   }
   ).then(resource => {
-    res.status(200).json({ resource });
+    res.status(200)
+      .json({ resource });
   })
     .catch((err) => {
       console.log(err);
