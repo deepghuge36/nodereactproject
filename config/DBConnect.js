@@ -12,5 +12,3 @@ module.exports = DBConnect = async () => {
   });
   console.log(`MongoDB connected ${URI}`);
 };
-// URI for coder reference only
-// module.exports = DBConnect;

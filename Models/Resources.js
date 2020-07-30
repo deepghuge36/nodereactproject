@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
-const ResourcesSchema = mongoose.Schema({ 
-adminId: {
+const ResourcesSchema = mongoose.Schema({
+  adminId: {
     type: String,
-  //   add required
+    //add required
   },
-  class: {
+  class:{
     type: String,
     required: true,
   },
-  board: {
+    board: {
     type: String,
     required: true,
   },
@@ -20,6 +20,7 @@ adminId: {
   title: {
     type: String,
     required: true,
+
   },
   description: {
     type: String,
@@ -31,4 +32,4 @@ adminId: {
   },
 });
 
-module.exports = Resources = mongoose.model('Resource',ResourcesSchema)
+module.exports = Resources = mongoose.model('Resource', ResourcesSchema)
